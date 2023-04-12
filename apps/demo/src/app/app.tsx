@@ -1,14 +1,12 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from "./app.module.scss";
-
-import NxWelcome from "./nx-welcome";
+import { useMyHook } from '@jest-mocking-sample/lib-one';
 
 export function App() {
+  const { count, increment } = useMyHook();
+
   return (
     <>
-      <NxWelcome title="demo" />
-
-      <div />
+      <p data-testid="count"> Count: {count} </p>
+      <button onClick={increment}>Increment</button>
     </>
   );
 }
